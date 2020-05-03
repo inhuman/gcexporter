@@ -1,7 +1,7 @@
 package gcexporter
 
 import (
-	"github.com/golang/groupcache/v2"
+	"github.com/mailgun/groupcache/v2"
 	"github.com/prometheus/client_golang/prometheus"
 )
 
