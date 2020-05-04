@@ -5,8 +5,6 @@ import (
 	"github.com/prometheus/client_golang/prometheus"
 )
 
-const subsystem = "groupcache"
-
 type Exporter struct {
 	groups              []*groupcache.Group
 	groupGets           *prometheus.Desc
@@ -25,7 +23,7 @@ type Exporter struct {
 	cacheEvictions      *prometheus.Desc
 }
 
-func NewExporter(namespace string, groups ...*groupcache.Group) *Exporter {
+func NewExporter(namespace, subsystem string, groups ...*groupcache.Group) *Exporter {
 	return &Exporter{
 		groups: groups,
 		groupGets: prometheus.NewDesc(
